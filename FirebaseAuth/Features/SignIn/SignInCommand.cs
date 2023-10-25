@@ -23,7 +23,7 @@ namespace FirebaseAuth.Features.SignIn
         {
             try
             {
-                await _client.SignInWithEmailAndPasswordAsync(_viewModel.Email, _viewModel.Password);
+                var _fbUser = await _client.SignInWithEmailAndPasswordAsync(_viewModel.Email, _viewModel.Password);
                 await Application.Current.MainPage.DisplayAlert("Success", "You've Signed In!", "Ok");
 
             } catch (Exception ex)
